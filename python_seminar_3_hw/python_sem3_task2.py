@@ -7,43 +7,55 @@
 # k = 6
 # Вывод: 5
 
-# Решение: 
+# Решение 1: 
 
-list_1 = [1, 2, 3, 4, 5]
-k = 6
+list_1 = [1, 28, 8, 41, 100]
+k = 60
+minRazn = abs(k - list_1[0])
+blizh = list_1[0]
 
-razn1 = 0
-l0 = list_1[0]
-min1 = k - l0
-bliz1 = list_1[0]
+for i in range(len(list_1)):
+    razn = abs(k - list_1[i])
+    if razn < minRazn:
+        minRazn = razn
+        blizh = list_1[i]
+print(blizh)
 
-razn2 = 0
-min2 = l0 - k
-bliz2 = list_1[0]
+# Решение 2: автотест принял, но перечитывать это сложно, поэтому создала новое решение (Решение 1)
+# list_1 = [1, 2, 3, 4, 5]
+# k = 6
+# razn1 = 0
+# l0 = list_1[0]
+# min1 = k - l0
+# bliz1 = list_1[0]
 
-bliz = list_1[0]
+# razn2 = 0
+# min2 = l0 - k
+# bliz2 = list_1[0]
 
-if min1 < 0:
-    min1 *= -1
-if min2 < 0:
-    min2 *= -1
+# bliz = list_1[0]
 
-for i in range(1, len(list_1)):
-    li = list_1[i]
-    razn1 = k - li
-    razn2 = li - k
-    if razn1 < 0:
-        razn1 *= -1
-    if razn2 < 0:
-        razn2 *= -1
-    if razn1 < min1:
-        min1 = razn1
-        bliz1 = li
-    if razn2 < min2:
-        min2 = razn2
-        bliz2 = li
+# if min1 < 0:
+#     min1 *= -1
+# if min2 < 0:
+#     min2 *= -1
 
-if min1 < min2:
-    print(bliz1)
-else:
-    print(bliz2)
+# for i in range(1, len(list_1)):
+#     li = list_1[i]
+#     razn1 = k - li
+#     razn2 = li - k
+#     if razn1 < 0:
+#         razn1 *= -1
+#     if razn2 < 0:
+#         razn2 *= -1
+#     if razn1 < min1:
+#         min1 = razn1
+#         bliz1 = li
+#     if razn2 < min2:
+#         min2 = razn2
+#         bliz2 = li
+
+# if min1 < min2:
+#     print(bliz1)
+# else:
+#     print(bliz2)
