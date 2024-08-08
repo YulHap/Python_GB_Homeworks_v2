@@ -7,7 +7,7 @@
 # k = 3
 # Вывод: 1
 
-# Решение: 
+# Решение 1: 
 
 list_1 = [1, 2, 3, 4, 5]
 k = 3
@@ -17,3 +17,24 @@ for i in range(len(list_1)):
     if list_1[i] == k:
         count += 1
 print(count)
+
+# Решение 2: 
+
+list_1 = [1, 2, 3, 4, 5]
+k = 3
+print(list_1.count(k))
+
+# Заимствованные решения:
+
+# Решение 1: 
+
+list_1 = [1, 2, 3, 4, 5]
+k = 3
+
+total = 0
+
+for i in list_1:
+    if i == k:
+        total += 1
+
+print(total)
