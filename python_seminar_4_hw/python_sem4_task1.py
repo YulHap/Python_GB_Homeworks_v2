@@ -14,9 +14,7 @@
 # На выходе:
 # 3 5
 
-# Решение: 
-
-# Мое первое решение:
+# Решение 1: 
 
 var1 = '5 4' 
 var2 = '1 3 5 7 9' 
@@ -35,7 +33,7 @@ while i < len(intersect):
     i += 1
 
 
-# Решение после код-ревью:
+# Решение 2 - после код-ревью:
 
 var1 = '5 4' 
 var2 = '1 3 5 7 9' 
@@ -45,3 +43,21 @@ intersect = set(var2.split()) & (set(var3.split()))  # & ==.intersection
 intersect = sorted(intersect)
 
 print(*intersect) # Распаковка intersect с помощью * 
+
+# Заимствованные решения:
+
+# Решение 1: 
+
+# заметка Андрея: 
+# более оптимальынй способ
+# метод sort() немного быстрее и потребляет на 24% меньше памяти
+# https://python-scripts.com/sort-list
+
+res = list(set(var2.split(' ')) & (set(var3.split(' '))))
+res.sort()
+print(*res)
+
+# Решение 2:
+
+res = set(var2.split(' ')) & (set(var3.split(' ')))
+print(*sorted(res)) # sorted в print-е сразу
