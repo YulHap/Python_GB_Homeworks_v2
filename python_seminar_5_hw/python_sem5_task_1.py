@@ -38,3 +38,27 @@ site = {'html': {'head': {'title': 'Мой сайт'},
                 }
         }
 
+def find_key(struct:dict, key:str, max_depth = None, depth = 1): # struct - словарь, в котором нужно искать ключ, key — искомый ключ, max_depth —максимальная глубина поиска, и depth — текущая глубина поиска
+    result = None
+    if (not max_depth is None) and depth > max_depth:
+        return result
+    if key in struct:
+        return struct[key]
+    else:
+        for key, value in struct.items():
+            if isinstance(value, dict):
+                result = find_key(value, key, max_depth, depth + 1)
+        return result 
+
+    
+key = input('Введите искомый ключ: ')
+answer = input("Хотите задать максимальную глубину? Y/N (Y - yes, N - no): ")
+if answer.upper() == 'Y':
+    given_depth = input('Задайте максимальную глубину: ') # given_depth - заданная глубина
+    if given_depth.isdigit():
+        given_depth = int(given_depth)
+else:
+    given_depth = None
+
+result = find_key(site, key, max_depth = given_depth, depth = 1)
+print(result)
