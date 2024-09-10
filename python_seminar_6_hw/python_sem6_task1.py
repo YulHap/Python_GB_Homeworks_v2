@@ -26,17 +26,8 @@ for let in txt:
 print(f'Список гласных букв: {vowels_txt}')
 print(f'Длина списка: {vowels_count}')
 
-# Решение 2 - с генератором списка (list comprehension) и переменной, включающей гласные 
 
-vowels_rus = 'ауоыиэяюёе'
-
-txt = input('Введите текст: ')
-vowels_txt = [let for let in txt if let in vowels_rus]
-
-print(f'Список гласных букв: {vowels_txt}')
-print(f'Длина списка: {len(vowels_txt)}')
-
-# Решение 3 - с генератором списка (list comprehension) без переменной, включающей гласные 
+# Решение 2 - с генератором списка (list comprehension)
 
 txt = input('Введите текст: ')
 vowels_txt = [let for let in txt if let in 'ауоыиэяюёе']
