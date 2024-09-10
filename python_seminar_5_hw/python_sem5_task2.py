@@ -85,6 +85,7 @@
 #     return site_struct
 
 import copy
+import pprint
 
 def make_site(site_struct:dict, product:str) -> dict:
     for key, value in site_struct.items():
@@ -113,4 +114,4 @@ while sites_count > 0:
     site_list.append(make_site(site_struct, site_product))
     sites_count -= 1
 
-print(site_list)
+pprint.pprint(site_list)
