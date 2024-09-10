@@ -73,17 +73,6 @@
 # все его элементы.
 
 
-# С такой функцией не заменяются наименования продуктов:
-# def make_site(site_struct:dict, product:str) -> dict:
-#     for key, value in site_struct.items():
-#         if key == 'title':
-#             value = f'Куплю/продам {product} недорого'
-#         elif key == 'h2':
-#             value = f'У нас самая низкая цена на {product}'
-#         elif type(value) is dict:
-#             value = make_site(value, product)
-#     return site_struct
-
 import copy
 import pprint
 
