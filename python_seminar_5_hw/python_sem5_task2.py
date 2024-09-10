@@ -106,11 +106,12 @@ site = {'html': {'head': {'title': 'Куплю/продам телефон не�
         }
 
 sites_count = int(input('Введите количество необходимых сайтов: '))
-site_struct = copy.deepcopy(site)
+
 site_list = []
 
 while sites_count > 0:
     site_product = input('Введите название продукта: ')
+    site_struct = copy.deepcopy(site)
     site_list.append(make_site(site_struct, site_product))
     sites_count -= 1
 
