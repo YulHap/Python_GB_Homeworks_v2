@@ -114,4 +114,4 @@ while sites_count > 0:
     site_list.append(make_site(site_struct, site_product))
     sites_count -= 1
 
-pprint.pprint(site_list)
+pprint.pprint(site_list, sort_dicts = False) 

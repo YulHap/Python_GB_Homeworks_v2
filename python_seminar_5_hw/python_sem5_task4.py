@@ -7,3 +7,18 @@
 # Функция должна получать список и возвращать его раскрытую версию (не
 # нужно добавлять элементы в список, записанный в глобальную переменную,
 # созданную снаружи функции).
+
+
+
+def open_list(any_list:list) -> list:
+    result = []
+    for i in any_list:
+        if type(i) is int:
+            result.append(i)
+        if type(i) is list:
+            result.extend(open_list(i))
+    return result
+
+nice_list = [1, 2, [3, 4], [[5, 6, 7], [8, 9, 10]], [[11, 12, 13], [14, 15], [16, 17, 18]]]
+
+print(open_list(nice_list))
