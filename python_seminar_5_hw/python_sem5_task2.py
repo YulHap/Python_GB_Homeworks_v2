@@ -72,7 +72,31 @@
 # Чтобы это реализовать, нужно сохранять сайты в списке и каждый раз печатать
 # все его элементы.
 
-sites_count = int(input('Введите количество необходимых сайтов: '))
+
+# С такой функцией не заменяются наименования продуктов:
+# def make_site(site_struct:dict, product:str) -> dict:
+#     for key, value in site_struct.items():
+#         if key == 'title':
+#             value = f'Куплю/продам {product} недорого'
+#         elif key == 'h2':
+#             value = f'У нас самая низкая цена на {product}'
+#         elif type(value) is dict:
+#             value = make_site(value, product)
+#     return site_struct
+
+# С таким решением наименования продуктов одинаковые в нескольких сайтах: 
+
+import copy
+
+def make_site(site_struct:dict, product:str) -> dict:
+    for key, value in site_struct.items():
+        if key == 'title':
+            site_struct[key] = value.replace('телефон', product)
+        elif key == 'h2':
+            site_struct[key] = value.replace('iPhone', product)
+        elif type(value) is dict:
+            value = make_site(value, product)
+    return site_struct
 
 site = {'html': {'head': {'title': 'Куплю/продам телефон недорого'},
                  'body': {'h2': 'У нас самая низкая цена на iPhone',
@@ -81,23 +105,13 @@ site = {'html': {'head': {'title': 'Куплю/продам телефон не�
                 }
         }
 
-def make_site(product:str): # Функция для создания сайта под конкретный продукт
+sites_count = int(input('Введите количество необходимых сайтов: '))
+site_struct = copy.deepcopy(site)
+site_list = []
 
-    struct.site = copy.deepcopy(site) # глубокое копирование исходного сайта
-    new_title = f'Куплю/продам {product} недорого'
-    struct_site = ????????????
-    new_h2 = f'У нас самая низкая цена на {product}'
-    struct_site = ????????????
-    return struct_site
+while sites_count > 0:
+    site_product = input('Введите название продукта: ')
+    site_list.append(make_site(site_struct, site_product))
+    sites_count -= 1
 
-def change_value(struct_site, key:str, new_value): # Функция для замены значения в структуре словаря
-
-    if key in struct_site:
-        struct_site[key] = value
-    else:
-        for sub_struct_site in struct_site.value():
-            if isinstance(sub_struct_site, dict):
-                change_value(sub_struct_site, key, new_value)
-    return struct_site
-
-def display_struct()
+print(site_list)
