@@ -84,8 +84,6 @@
 #             value = make_site(value, product)
 #     return site_struct
 
-# С таким решением наименования продуктов одинаковые в нескольких сайтах: 
-
 import copy
 
 def make_site(site_struct:dict, product:str) -> dict:
