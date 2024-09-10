@@ -93,7 +93,7 @@ def make_site(site_struct:dict, product:str) -> dict:
         elif key == 'h2':
             site_struct[key] = value.replace('iPhone', product)
         elif type(value) is dict:
-            value = make_site(value, product)
+            make_site(value, product)
     return site_struct
 
 site = {'html': {'head': {'title': 'Куплю/продам телефон недорого'},

@@ -14,3 +14,16 @@
 # sum(1, 2, 3, 4, 5)
 # Ответ в консоли: 15
 
+
+def my_sum(*args):
+    total_sum = 0
+    for i in args:
+        if type(i) is int:
+            total_sum += i
+        elif isinstance(i, (list, tuple)):
+            for j in i:
+                total_sum += my_sum(j)
+    return total_sum
+
+print(my_sum([[1, 2, [3]], [1], 3]))
+print(my_sum(1, 2, 3, 4, 5))
