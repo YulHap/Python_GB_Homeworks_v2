@@ -17,3 +17,44 @@
 # 9.93, 7.76, 7.4, 8.26, 7.94, 5.71, 7.89, 7.77]
 # Победители тура: [7.86, 6.76, 9.97, 9.08, 5.62, 9.46, 8.65, 8.67, 8.41, 7.0, 7.56, 7.8,
 # 9.93, 8.25, 7.4, 8.26, 8.91, 7.11, 8.29, 9.52]
+
+
+# Решение 1 - функции, циклы
+
+import random
+
+comand = []
+
+def ball_random(comand: list, start, end, count:int) -> list:
+    comand = []
+    for i in range(count):
+        comand.append(round((random.uniform(start, end)), 2))
+    return comand
+
+
+def winner_list(list1:list, list2:list) -> list:
+    winner = []
+    if len(list1) == len(list2):
+        for i in range(len(list1)):
+            winner.append(max(list1[i], list2[i]))
+    else:
+        print('Длина списков должна быть одинаковой!')
+    return winner
+
+comand1 = ball_random(comand, 5, 10, 20)
+comand2 = ball_random(comand, 5, 10, 20)
+winners = winner_list(comand1, comand2)
+
+print(f'Первая команда: {comand1}')
+print(f'Вторая команда: {comand2}')
+print(f'Победители тура: {winners}')
+
+# Решение 2 - с генератором списка (list comprehension)
+
+import random
+
+comand1 = [round((random.uniform(5, 10)), 2) for _ in range(20)]
+comand2 = [round((random.uniform(5, 10)), 2) for _ in range(20)]
+winners = [max(comand1[i], comand2[i]) if len(comand1) == len(comand2) else None for i in range(len(comand1))]
+
+print(f'Первая команда: {comand1}', f'Вторая команда: {comand2}', f'Победители тура: {winners}', sep = '\n')
