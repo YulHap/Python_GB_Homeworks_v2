@@ -8,3 +8,9 @@
 # numbers: List[int] = [1, 2, 3, 4, 5, 6, 7, 8]
 # Результат работы программы:
 # [('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5)]
+
+letter = ['a', 'b', 'c', 'd', 'e']
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+
+results = list(map(lambda x, y: (x, y), letter, numbers))
+print(results)
