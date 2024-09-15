@@ -42,3 +42,5 @@ with open('file_for_hw8/numbers.txt', encoding='utf-8') as file1:
 
 with open('file_for_hw8/answer.txt', 'a', encoding='utf-8') as file2:
     print(res)
+
+# FileNotFoundError: [Errno 2] No such file or directory: 'file_for_hw8/numbers.txt'
