@@ -23,10 +23,8 @@
 # Напишите программу, которая выводит на экран все строки этого файла в
 # обратном порядке
 
-with open("file_for_hw8/zen.txt", encoding="utf-8") as file:
+with open("python_seminar_8_hw/file_for_hw8/zen.txt", encoding="utf-8") as file:
     txt = file.readlines()
-
+    
 for line in reversed(txt):
-    print(line, end='')
-
-# FileNotFoundError: [Errno 2] No such file or directory: 'file_for_hw8/zen.txt'
+    print(line)

@@ -22,3 +22,8 @@
 # 1) V. Petrov 98
 # 2) P. Sergeev 92
 
+with open("python_seminar_8_hw/file_for_hw8/first_tour.txt", "r", encoding="utf-8") as ft:
+    txt = ft.readlines()
+    k = int(txt[0])
+
+
