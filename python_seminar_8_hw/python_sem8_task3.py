@@ -44,8 +44,7 @@ for key, value in dict_player.items():
 sorted_sec_tour = sorted(second_tour.items(), reverse=True)
 
 
-
 with open("python_seminar_8_hw/file_for_hw8/second_tour.txt", "w", encoding="utf-8") as st:
     print(count, file = st)
     for i, value in enumerate(sorted_sec_tour, start = 1):
-        print(i, ') ', *value, file = st)
+        print(i, ') ', value[1], ' ', value[0], sep = '', file = st)
